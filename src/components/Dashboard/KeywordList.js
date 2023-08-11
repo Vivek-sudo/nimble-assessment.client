@@ -98,14 +98,15 @@ const KeywordList = ({ keywords, setKeywords, isLoading, setIsLoading }) => {
                             </div>
                         ))}
                     </div> : <h4>No Keywords searched yet!</h4>)}
-            <div className="pagination gap-1 align-items-center justify-content-center">
+            <div className="pagination gap-1 align-items-center justify-content-center"
+                style={{ display: `${(!keywords || !keywords.length) && 'none'}` }}>
                 <button className="btn btn-secondary" onClick={handlePrevPage}
                     disabled={pageNo === 1}>
                     Previous
                 </button>
                 <span className="page-number">Page {pageNo}</span>
                 <button className="btn btn-secondary" onClick={handleNextPage}
-                    disabled={isLastPage}>
+                    disabled={isLastPage || !keywords || !keywords.length}>
                     Next
                 </button>
             </div>

@@ -4,7 +4,7 @@ import keywordApi from '../../services/keywordApi';
 
 const SearchBar = ({
     keyword, setKeyword,
-    setKeywords,
+    keywords, setKeywords,
     isLoading, setIsLoading }) => {
     const handleKeywordChange = (event) => {
         setKeyword(event.target.value);
@@ -14,7 +14,8 @@ const SearchBar = ({
         setIsLoading(true);
 
         let keywords = [];
-        if (!keyword) {
+
+        if (!keyword || !keyword.length) {
             keywords = await keywordApi.getAllKeywords();
         } else {
             keywords = await keywordApi.searchKeyword(keyword);
@@ -37,11 +38,11 @@ const SearchBar = ({
                     className="form-control"
                     placeholder="Enter keyword..."
                     value={keyword}
-                    disabled={isLoading}
+                    disabled={isLoading || !keywords || !keywords.length}
                     onChange={handleKeywordChange}
                 />
                 <button className="btn btn-primary"
-                    disabled={isLoading}
+                    disabled={isLoading || !keywords || !keywords.length}
                     onClick={handleSearch}>
                     <AiOutlineSearch />
                 </button>
