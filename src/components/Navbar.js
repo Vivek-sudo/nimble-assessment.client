@@ -6,7 +6,7 @@ const Navbar = () => {
     const { isLoggedIn, logout } = useAuth();
 
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className={`container-fluid ${!isLoggedIn && 'justify-content-center'}`}>
                 <div className="d-flex align-items-center">
                     <img

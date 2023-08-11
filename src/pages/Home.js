@@ -10,11 +10,11 @@ const Home = () => {
     };
 
     return (
-        <div className="d-flex flex-column justify-content-center align-items-center"
-            style={{ background: 'linear-gradient(to bottom, #f0f0f0, #e6e6e6)' }} >
-            <div className="bg-white p-3 my-4 rounded shadow col-11 col-md-6 px-md-5">
+        <div className="d-flex flex-column justify-content-center align-items-center">
+            <div className="bg-white p-3 my-4 rounded shadow col-11 col-md-6 px-md-5"
+                style={{ minHeight: '77vh' }}>
                 {showRegister ? <Register /> : <Login />}
-                <div className="d-grid gap-1 mt-3 text-center">
+                <div className="d-grid gap-1 text-center">
                     {showRegister ? (
                         <>
                             <p>Already have an account?</p>

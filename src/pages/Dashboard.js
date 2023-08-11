@@ -12,9 +12,8 @@ const Dashboard = () => {
     <div
       className="dashboard-container px-md-5"
       style={{
-        minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center',
-        alignItems: 'center', background: 'linear-gradient(to bottom, #f0f0f0, #e6e6e6)',
-        padding: '1rem',
+        minHeight: '83vh', display: 'flex', flexDirection: 'column', justifyContent: 'center',
+        alignItems: 'center', padding: '1rem',
       }}>
       <div
         className="dashboard-content mb-3"
@@ -25,7 +24,7 @@ const Dashboard = () => {
         }} >
         <SearchBar
           keyword={keyword} setKeyword={setKeyword}
-          setKeywords={setKeywords}
+          keywords={keywords} setKeywords={setKeywords}
           isLoading={isLoading} setIsLoading={setIsLoading} />
         <UploadCSV
           isLoading={isLoading} setIsLoading={setIsLoading} />

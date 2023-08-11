@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Dashboard from './pages/Dashboard';
 import { useAuth } from './utils/AuthContext';
 import NotFound from './pages/NotFound';
+import './index.css';
 
 const App = () => {
   const { isLoggedIn } = useAuth();
