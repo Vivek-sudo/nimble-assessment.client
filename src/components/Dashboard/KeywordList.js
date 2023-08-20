@@ -13,7 +13,9 @@ const KeywordList = ({ keywords, setKeywords, isLoading, setIsLoading }) => {
     const [pageNo, setPageNo] = useState(1);
 
     useEffect(() => {
-        fetchKeywords();
+        setTimeout(() => {
+            fetchKeywords();
+        }, 500)
     }, [pageNo]);
 
     const handlePrevPage = () => {
